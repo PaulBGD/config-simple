@@ -1,8 +1,9 @@
-"use strict";
+/// <reference path="./typings/tsd.d.ts"/>
 var fs = require('fs');
 var path = require('path');
 var JSON5 = require('json5');
 var yaml = require('js-yaml');
+// these go first
 var JSParser = (function () {
     function JSParser() {
     }
@@ -74,8 +75,10 @@ var Config = (function () {
     };
     return Config;
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = Config;
+exports.__esModule = true;
+exports["default"] = Config;
 module.exports = Config;
+// this will allow us in ES6 and TypeScript to import this as the default class.
+// however we need the hack above, because otherwise typescript doesn't believe us
 module.exports.default = module.exports;
 Object.defineProperty(exports, "__esModule", { value: true });
